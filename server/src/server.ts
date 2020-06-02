@@ -5,14 +5,20 @@ const app = express();
 const users = ['Diego','Robson','Zé', 'Link'];
 
 app.get('/users', (request, response) => {
-    console.log('Listagem de usuários');
+    const search = request.query.search
+
+    console.log(search, !!search, typeof(search))
+
+    if (search)
+        return response.json(users.filter(user => user.includes(String(search))))
+
     return response.json(users)
 });
 
 app.get('/users/:id', (request, response) => {
     const id = Number(request.params.id);
     const user = users[id];
-    return 1
+    return response.json(user);
 })
 
 app.post('/users', (request, response) => {
