@@ -46,6 +46,17 @@ class PointsController{
         });
     
     }
+
+    async show(request: Request, response: Response){
+        const id = request.params.id;
+        const point = await knex('points').where('id', id).first();
+
+        if(!point){
+            return response.status(400).json({message: ' not found'})
+        }
+
+        return response.json(point);
+    }
 }
 
 
