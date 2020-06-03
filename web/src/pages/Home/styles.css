@@ -1,7 +1,7 @@
 #page-home {
-    height: 100vh;
+    height: 110vh;
   
-    background: url('../../assets/home-background.svg') no-repeat 600px bottom;
+    background: url('../../assets/home-background.svg') no-repeat 40vmax bottom;
   }
   
   #page-home .content {
@@ -83,7 +83,7 @@
     background: #2FB86E;
   }
   
-  @media(max-width: 900px) {
+  @media(max-width: 800px) {
     #page-home .content {
       align-items: center;
       text-align: center;
