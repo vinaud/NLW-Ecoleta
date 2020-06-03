@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft} from 'react-icons/fi';
 import { Map, TileLayer, Marker} from 'react-leaflet';
+import api from '../../services/api';
 
 import logo from '../../assets/logo.svg';
 
 const CreatePoint = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        api.get('items').then(response => {
+            setItems(response.data);
+        })
+
+    }, []);
+
     return (
         <div id="page-create-point">
             <header>
