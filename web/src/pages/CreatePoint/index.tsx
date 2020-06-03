@@ -7,8 +7,14 @@ import api from '../../services/api';
 
 import logo from '../../assets/logo.svg';
 
+interface Item {
+    id: number,
+    title: string,
+    image_url:string
+}
+
 const CreatePoint = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState<Item[]>([]);
 
     useEffect(() => {
         api.get('items').then(response => {
@@ -98,32 +104,15 @@ const CreatePoint = () => {
                         <span>Selecione um ou mais itens abaixo</span>
                     </legend>
                     <ul className="items-grid">
-                        <li>
-                            <img src="http://localhost:3333/uploads/oleo.svg" alt="óleo"/>
-                            <span>Óleo de cozinha</span>
-                        </li>
-
-                        <li>
-                            <img src="http://localhost:3333/uploads/oleo.svg" alt="óleo"/>
-                            <span>Óleo de cozinha</span>
-                        </li>
-
-                        <li>
-                            <img src="http://localhost:3333/uploads/oleo.svg" alt="óleo"/>
-                            <span>Óleo de cozinha</span>
-                        </li>
-                        <li>
-                            <img src="http://localhost:3333/uploads/oleo.svg" alt="óleo"/>
-                            <span>Óleo de cozinha</span>
-                        </li>
-                        <li>
-                            <img src="http://localhost:3333/uploads/oleo.svg" alt="óleo"/>
-                            <span>Óleo de cozinha</span>
-                        </li>
-                        <li>
-                            <img src="http://localhost:3333/uploads/oleo.svg" alt="óleo"/>
-                            <span>Óleo de cozinha</span>
-                        </li>
+                        {items.map(item => {
+                            return (
+                            <li>
+                                <img src={item.image_url} alt="óleo"/>
+                                <span>{item.title}</span>
+                            </li>
+    
+                            )
+                        })}
                     </ul>
                 </fieldset>
                 <button type="submit">
