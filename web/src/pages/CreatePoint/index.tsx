@@ -106,7 +106,7 @@ const CreatePoint = () => {
                     <ul className="items-grid">
                         {items.map(item => {
                             return (
-                            <li>
+                            <li key={item.id}>
                                 <img src={item.image_url} alt="óleo"/>
                                 <span>{item.title}</span>
                             </li>
