@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
+import Header from './header';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <Header/>
         <h1>hello Warudo!</h1>
       
     </div>
