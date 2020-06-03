@@ -1,12 +1,12 @@
 import React,{useState} from 'react';
-import './App.css';
-import Header from './header';
+import './App.css'; 
+import Home from './pages/Home'
 
 function App() {
   return (
     <div>
-      <Header/>
-        <h1>hello Warudo!</h1>
+      
+        <Home/>
       
     </div>
   );
