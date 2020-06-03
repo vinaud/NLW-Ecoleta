@@ -1,6 +1,6 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
 import './styles.css';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft} from 'react-icons/fi';
 import { Map, TileLayer, Marker} from 'react-leaflet';
 import { LeafletMouseEvent} from 'leaflet';
@@ -24,6 +24,7 @@ interface IBGECityResponse{
 }
 
 const CreatePoint = () => {
+    const history = useHistory();
     const [items, setItems] = useState<Item[]>([]);
     const [ufs, setUfs] = useState<string[]>([]);
     const [selectedUf, setSelectedUf] = useState('0');
@@ -123,6 +124,8 @@ const CreatePoint = () => {
         console.log(data);
         await api.post('points', data);
         alert('Ponto de coleta cadastrado com sucesso!');
+        history.push('/');
+
     }
 
     return (
