@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text, ImageBackground } from 'react-native';
+import { View, Image, StyleSheet, Text, ImageBackground, TextInput } from 'react-native';
 import { RectButton} from 'react-native-gesture-handler';
 import { Feather as Icon} from '@expo/vector-icons';
 
@@ -25,6 +25,14 @@ const Home = () => {
 
            </View>
            <View style={styles.footer}>
+             <TextInput
+             style={styles.input}
+             placeholder="Digite a UF"
+             />
+             <TextInput
+             style={styles.input}
+             placeholder="Digite a Cidade"
+             />
            <RectButton style={styles.button} onPress={ handleNavigationToPoints }>
              <View style={styles.buttonIcon}><Text><Icon name="arrow-right" color="#FFF" size={24}/></Text></View>
              <Text style={styles.buttonText}>Entrar</Text>
