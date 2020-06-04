@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Image } from 'react-native';
 import Constants  from 'expo-constants';
 import {Feather as Icon} from "@expo/vector-icons"
 import { useNavigation} from '@react-navigation/native'
@@ -33,7 +33,9 @@ const Points = () => {
                 <Marker coordinate = {{
                     latitude: -27.20922052,
                     longitude: -49.6401092,
-                }}/>
+                }}>
+                    <Image style={styles.mapMarkerImage} source={{uri: "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"}}/>
+                </Marker>
                 </MapView>
             </View>
         </View>
