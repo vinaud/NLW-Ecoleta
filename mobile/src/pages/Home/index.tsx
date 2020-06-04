@@ -1,18 +1,24 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, Text, ImageBackground } from 'react-native';
 
 
 const Home = () => {
     return (
-       <View style={styles.container}>   
-           <Image source={require('../../assets/logo.png')}/>
-        </View>
+       <ImageBackground source={require('../../assets/home-background.png')} style={styles.container}>   
+           <View style={styles.main}>
+              <Image source={require('../../assets/logo.png')}/>
+              <Text style={styles.title}>Seu marketplace de coeta de resíduos.</Text>
+              <Text style={styles.description}>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.</Text>
+
+           </View>
+        </ImageBackground>
     )
 }
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       padding: 32,
+      backgroundColor: '#f0f0f5',
     },
   
     main: {
