@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Image } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text, ScrollView, Image, Alert } from 'react-native';
 import Constants  from 'expo-constants';
 import {Feather as Icon} from "@expo/vector-icons"
 import { useNavigation} from '@react-navigation/native'
 import MapView, { Marker } from 'react-native-maps';
 import { SvgUri} from 'react-native-svg';
+import * as Location from 'expo-location';
 import api from '../../services/api';
 
 interface Item {
@@ -18,6 +19,24 @@ const Points = () => {
     const [items, setItems] = useState<Item[]>([]);
     const [selectedItems, setSelectedItems] = useState<Number[]>([])
     const navigation = useNavigation();
+    const [initialPosition, setInitialPosition] = useState<[number,number]>([0,0]);
+
+    useEffect(()=> {
+      async function loadPosition(){
+        const { status } = await Location.requestPermissionsAsync();
+
+        if(status !== "granted"){
+          Alert.alert('Precisamos de sua permissão para obter a localização');
+          return;
+        }
+
+        const location = await Location.getCurrentPositionAsync();
+        const { latitude, longitude } = location.coords;
+        setInitialPosition([latitude,longitude]);
+
+      }
+      loadPosition();
+    }, []);
 
     useEffect(()=> {
       api.get('items').then( response => {
@@ -56,8 +75,8 @@ const Points = () => {
 
             <View style={styles.mapContainer}>
                 <MapView style={styles.map} initialRegion={{
-                    latitude: -27.20922052,
-                    longitude: -49.6401092,
+                    latitude: initialPosition[0],
+                    longitude: initialPosition[1],
                     latitudeDelta: 0.014,
                     longitudeDelta: 0.014,
 
