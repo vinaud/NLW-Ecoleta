@@ -39,6 +39,7 @@ const CreatePoint = () => {
         email: '',
         whatsapp: ''
     });
+    const [selectedFile, setSelectedFile ] = useState<File>();
 
     useEffect(()=>{
          navigator.geolocation.getCurrentPosition(position => {
@@ -112,17 +113,22 @@ const CreatePoint = () => {
         const city = selectedCity;
         const [latitude, longitude] = selectedPosition;
         const items = selectedItems;
-        const data = {
-            name,
-            email,
-            whatsapp,
-            uf,
-            city,
-            latitude,
-            longitude,
-            items
+
+        const data = new FormData();
+        
+        data.append('name', name);
+        data.append('email', email);
+        data.append('whatsapp', whatsapp);
+        data.append('uf', uf);
+        data.append('city', city);
+        data.append('latitude', String(latitude));
+        data.append('longitude', String(longitude));
+        data.append('items', items.join(','));
+        
+        if(selectedFile){
+            data.append('image', selectedFile);
         }
-        console.log(data);
+        
         await api.post('points', data);
         alert('Ponto de coleta cadastrado com sucesso!');
         history.push('/');
@@ -140,7 +146,7 @@ const CreatePoint = () => {
             </header>
             <form onSubmit={handleSubmit}>
                 <h1>Cadastro do <br/> ponto de coleta</h1>
-                <Dropzone />
+                <Dropzone onFileUploaded = {setSelectedFile}/>
                 <fieldset>
                     <legend>
                         <h2>Dados</h2>
