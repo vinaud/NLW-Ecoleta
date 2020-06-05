@@ -139,8 +139,8 @@ const CreatePoint = () => {
                 </Link>
             </header>
             <form onSubmit={handleSubmit}>
-                <Dropzone />
                 <h1>Cadastro do <br/> ponto de coleta</h1>
+                <Dropzone />
                 <fieldset>
                     <legend>
                         <h2>Dados</h2>
