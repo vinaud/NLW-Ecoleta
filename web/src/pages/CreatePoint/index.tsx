@@ -8,6 +8,7 @@ import axios from 'axios';
 import api from '../../services/api';
 
 import logo from '../../assets/logo.svg';
+import Dropzone from '../../components/Dropzone';
 
 interface Item {
     id: number;
@@ -138,6 +139,7 @@ const CreatePoint = () => {
                 </Link>
             </header>
             <form onSubmit={handleSubmit}>
+                <Dropzone />
                 <h1>Cadastro do <br/> ponto de coleta</h1>
                 <fieldset>
                     <legend>
