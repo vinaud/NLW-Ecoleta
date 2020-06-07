@@ -45,6 +45,24 @@ e depois popular a tabela de "items" com o comando :
 $ npm run knex:seed
 ```
 ### Execução
-### 
+
+- Servidor backend na pasta server:
+```bash
+
+$ npm run dev
+```
+
+- Frontend web via next na pasta web:
+```bash
+
+$ npm start
+```
+
+- Aplicação móvel via expo na pasta mobile:
+```bash
+
+$ npm start
+```
+
 
 ## Telas do projeto
