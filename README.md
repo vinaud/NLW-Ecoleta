@@ -1,4 +1,5 @@
 # Projeto Ecoleta - Next Level Week
+![logo](https://i.imgur.com/G5aG6xS.png)
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
@@ -19,6 +20,8 @@ O projeto possui um módulo servidor, que fornece a API de consumo de informaç�
 - Expo
 - HTL5 + CSS3
 - SQLite3
+- Leaflet
+- Dropzone
 - Knex
 - Axios
 - Multer
@@ -29,7 +32,7 @@ O projeto possui um módulo servidor, que fornece a API de consumo de informaç�
 
 - Clonar o projeto no ambiente local
 
-- E cada subprojeto, web, server e mobile, instalar as dependências com o comando:
+- Em cada subprojeto, web, server e mobile, instalar as dependências com o comando:
 ```bash
 
 $ npm install
@@ -66,3 +69,4 @@ $ npm start
 
 
 ## Telas do projeto
+Seção em construção
