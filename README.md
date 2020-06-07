@@ -44,7 +44,7 @@ e depois popular a tabela de "items" com o comando :
 
 $ npm run knex:seed
 ```
-### Execução
+### Execução em ambiente de desenvolvimento
 
 - Servidor backend na pasta server:
 ```bash
