@@ -69,4 +69,6 @@ $ npm start
 
 
 ## Telas do projeto
-Seção em construção
+### Telas web
+
+![inicial](https://i.imgur.com/fwXbks1.png)
