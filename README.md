@@ -72,3 +72,9 @@ $ npm start
 ### Telas web
 
 ![inicial](https://i.imgur.com/fwXbks1.png)
+
+![cadastro](https://i.imgur.com/m68lgoR.png)
+
+![mapa](https://i.imgur.com/0xHvbS0.png)
+
+![itens](https://i.imgur.com/SQD6n1m.png)
