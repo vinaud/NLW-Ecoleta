@@ -5,6 +5,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/generator/?plabel=Made+with&slabel=Cypress&sbg=%239711E9&pbg=%23C541E0)](https://forthebadge.com)
+
 
 ## Descrição
 O projeta Ecoleta foi implementado durante o workshop Next Level Week da Rockeseat e seu objetivo é facilitar com que as pessoas tenham facilidade de encontrar pontos de coleto de reiduos especiais como lâmpadas e pilhas.
